@@ -7,7 +7,7 @@ COPY ./book-reservation/pom.xml .
 RUN mvn dependency:go-offline
 
 # Downloading the source code and building the application
-RUN git clone https://github.com/HBsoon/kimbtc.git /tmp/petclinic_btc && \
+RUN git clone https://github.com/HBsoon/project-book.git /tmp/petclinic_btc && \
     mv /tmp/petclinic_btc/src ./src && \
     rm -rf /tmp/petclinic_btc
 RUN mvn package -P MySQL -DskipTests
