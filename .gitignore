@@ -1,0 +1,8 @@
+.terraform
+.terraform.lock.hcl
+.terraform.tfstate.lock.info
+terraform-key.json
+terraform.tfstate
+terraform.tfstate.backup
+terraform.tfstate.1694066406.backup
+terraform.tfvars
