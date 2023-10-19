@@ -3,13 +3,13 @@ FROM maven:3.8.4-openjdk-17 AS build
 WORKDIR /app
 
 # Copying the Maven project file and downloading the dependencies
-COPY ./petclinic_btc/pom.xml .
+COPY ./book-reservation/pom.xml .
 RUN mvn dependency:go-offline
 
 # Downloading the source code and building the application
-RUN git clone <해당 git 경로> /tmp/<PrjName기입(ex: petclinic_btc)> && \
-    mv /tmp/<PrjName기입(ex: petclinic_btc)>/src ./src && \
-    rm -rf /tmp/<PrjName기입(ex: petclinic_btc)>
+RUN git clone https://github.com/HBsoon/kimbtc.git /tmp/petclinic_btc && \
+    mv /tmp/petclinic_btc/src ./src && \
+    rm -rf /tmp/petclinic_btc
 RUN mvn package -P MySQL -DskipTests
 
 # Final stage
